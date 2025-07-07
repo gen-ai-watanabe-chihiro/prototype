@@ -46,6 +46,7 @@ cd proto0000
 2. **バックエンドの依存関係インストール**
 ```bash
 cd backend
+sudo apt install python3.12-venv
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -101,6 +102,10 @@ uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```bash
 cd frontend
 npm start
+```
+### フロントエンド起動時に「react-scripts: not found」が発生した場合
+```bash
+npm install react-scripts
 ```
 
 ### アクセス
