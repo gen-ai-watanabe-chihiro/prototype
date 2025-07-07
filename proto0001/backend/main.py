@@ -18,11 +18,15 @@ import jwt
 import bcrypt
 from datetime import datetime, timedelta
 import os
+from dotenv import load_dotenv
 from database import get_db_connection
 import psycopg2
 from psycopg2.extras import RealDictCursor
 from azure_openai_client import get_azure_openai_client, ChatRequest, ChatMessage, ChatResponse
 import json
+
+# 環境変数を読み込み
+load_dotenv()
 
 app = FastAPI(title="WebApp API", version="1.0.0")
 

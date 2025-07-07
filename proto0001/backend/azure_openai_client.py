@@ -11,12 +11,16 @@ from openai import AzureOpenAI
 from pydantic import BaseModel
 import json
 from datetime import datetime
+from dotenv import load_dotenv
+
+# 環境変数を読み込み
+load_dotenv()
 
 # 環境変数から設定を読み込み
 AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT", "")
 AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY", "")
 AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2023-12-01-preview")
-AZURE_OPENAI_MODEL_NAME = os.getenv("AZURE_OPENAI_MODEL_NAME", "gpt-35-turbo")
+AZURE_OPENAI_MODEL_NAME = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "gpt-35-turbo")
 
 class ChatMessage(BaseModel):
     role: str
